@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sebastián Rain — Analista Programador</title>
+<meta name="description" content="Sebastián Ignacio Rain Millapán — Técnico de Nivel Superior Analista Programador, estudiante de Ingeniería en Informática en INACAP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f6;
+    --bg-alt:#f2f0ea;
+    --surface:#ffffff;
+    --border:#e6e2d8;
+    --text:#1d2129;
+    --text-dim:#5b6270;
+    --text-faint:#8b8f7e;
+    --accent:#a3671f;
+    --accent-ink:#ffffff;
+    --accent-soft:#f3e6d2;
+    --teal:#3c7a72;
+    --shadow: 0 12px 32px -18px rgba(30,25,15,0.18);
+    --sans:'Inter', system-ui, -apple-system, sans-serif;
+    --display:'Manrope', var(--sans);
+    --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  }
+
+  [data-theme="dark"]{
+    --bg:#12141a;
+    --bg-alt:#191c24;
+    --surface:#1c1f28;
+    --border:#2b2f3a;
+    --text:#eef0f4;
+    --text-dim:#a2a8b6;
+    --text-faint:#6e7482;
+    --accent:#e0a94b;
+    --accent-ink:#1a1408;
+    --accent-soft:#332b18;
+    --teal:#6fb3aa;
+    --shadow: 0 20px 48px -20px rgba(0,0,0,0.55);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    transition:background .25s ease, color .25s ease;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--accent); color:var(--accent-ink);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  img{max-width:100%; display:block;}
+
+  .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
+  section{padding:96px 0;}
+  @media (max-width:720px){ section{padding:64px 0;} }
+  @media (max-width:480px){ .wrap{padding:0 18px;} }
+
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; font-weight:600;
+    color:var(--accent); text-transform:uppercase; letter-spacing:0.08em;
+    margin-bottom:12px;
+  }
+  h2.section-title{
+    font-family:var(--display); font-weight:800;
+    font-size:clamp(24px, 3.2vw, 34px); letter-spacing:-0.01em;
+    margin-bottom:10px;
+  }
+  .section-lede{color:var(--text-dim); max-width:60ch; margin-bottom:44px; font-size:16px;}
+
+  /* ---- nav ---- */
+  header.nav{
+    position:sticky; top:0; z-index:60;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{
+    max-width:1040px; margin:0 auto; padding:0 24px;
+    height:66px; display:flex; align-items:center; justify-content:space-between;
+  }
+  .nav-brand{font-family:var(--display); font-weight:800; font-size:16px; display:flex; align-items:center; gap:9px;}
+  .nav-brand .mark{
+    width:30px; height:30px; border-radius:8px;
+    background:var(--accent); color:var(--accent-ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:800; font-size:13px;
+  }
+  .nav-right{display:flex; align-items:center; gap:8px;}
+  .nav-links{display:flex; gap:30px; font-size:14.5px; font-weight:600; color:var(--text-dim);}
+  .nav-links a{transition:color .15s;}
+  .nav-links a:hover{color:var(--accent);}
+
+  .icon-btn{
+    width:38px; height:38px; border-radius:8px; border:1px solid var(--border);
+    background:var(--surface); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; transition:border-color .15s, transform .15s;
+  }
+  .icon-btn:hover{border-color:var(--accent); transform:translateY(-1px);}
+  .icon-btn svg{width:17px; height:17px; stroke:var(--text);}
+  [data-theme="dark"] .icon-sun{display:block;} [data-theme="dark"] .icon-moon{display:none;}
+  [data-theme="light"] .icon-sun{display:none;} [data-theme="light"] .icon-moon{display:block;}
+
+  .menu-btn{display:none;}
+  @media (max-width:760px){
+    .nav-links{display:none;}
+    .menu-btn{display:flex;}
+  }
+  .mobile-menu{
+    display:none; flex-direction:column; gap:2px;
+    border-bottom:1px solid var(--border); background:var(--bg);
+    padding:8px 24px 18px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 4px; font-weight:600; font-size:15px; border-bottom:1px solid var(--border);}
+  .mobile-menu a:last-child{border-bottom:none;}
+
+  /* ---- hero ---- */
+  .hero{padding:76px 0 88px;}
+  .hero-grid{display:grid; grid-template-columns:1.25fr 0.85fr; gap:48px; align-items:center;}
+  @media (max-width:840px){ .hero-grid{grid-template-columns:1fr; gap:36px;} }
+
+  .kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--teal);
+    background:var(--surface); border:1px solid var(--border);
+    padding:6px 12px; border-radius:20px; margin-bottom:22px;
+  }
+  .kicker .dot{width:7px; height:7px; border-radius:50%; background:#4caf6d;}
+
+  .hero-name{
+    font-family:var(--display); font-weight:800;
+    font-size:clamp(34px, 5.2vw, 54px); line-height:1.06; letter-spacing:-0.02em;
+    margin-bottom:14px;
+  }
+  .hero-name .accent-text{color:var(--accent);}
+  .hero-role{font-size:17px; color:var(--text-dim); font-weight:600; margin-bottom:18px;}
+  .hero-desc{color:var(--text-dim); max-width:56ch; font-size:16px; margin-bottom:32px;}
+
+  .hero-cta{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--sans); font-size:14.5px; font-weight:600;
+    padding:13px 22px; border-radius:9px; border:1px solid var(--border);
+    display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .15s, transform .15s, background .15s;
+    background:var(--surface);
+  }
+  .btn:hover{transform:translateY(-1px); border-color:var(--accent);}
+  .btn-primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent); box-shadow:var(--shadow);}
+  .btn-primary:hover{filter:brightness(1.04);}
+
+  .hero-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:18px;
+    padding:30px; box-shadow:var(--shadow);
+  }
+  .avatar{
+    width:76px; height:76px; border-radius:16px;
+    background:linear-gradient(135deg, var(--accent), var(--teal));
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-weight:800; font-size:26px; color:#fff;
+    margin-bottom:18px;
+  }
+  .hero-card h3{font-family:var(--display); font-size:19px; font-weight:800; margin-bottom:2px;}
+  .hero-card .role-small{color:var(--text-dim); font-size:13.5px; margin-bottom:20px;}
+  .stat-row{display:flex; justify-content:space-between; padding:12px 0; border-top:1px solid var(--border); font-size:14px;}
+  .stat-row .k{color:var(--text-faint);}
+  .stat-row .v{font-weight:700; color:var(--text);}
+  .stat-row .v.ok{color:#3f9d5f;}
+
+  /* ---- cards / grids ---- */
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:24px; box-shadow:var(--shadow);
+  }
+
+  .edu-grid{display:grid; gap:14px;}
+  .edu-item{
+    display:grid; grid-template-columns:130px 1fr; gap:20px;
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:22px 26px; box-shadow:var(--shadow);
+  }
+  @media (max-width:600px){ .edu-item{grid-template-columns:1fr; gap:6px;} }
+  .edu-item .period{font-family:var(--mono); font-size:12.5px; color:var(--text-faint); padding-top:2px;}
+  .edu-item h3{font-family:var(--display); font-size:17px; font-weight:700; margin-bottom:4px;}
+  .edu-item .org{color:var(--text-dim); font-size:14.5px;}
+  .status-chip{
+    display:inline-block; font-family:var(--mono); font-size:11px; font-weight:600;
+    padding:4px 10px; border-radius:20px; color:var(--teal); background:color-mix(in srgb, var(--teal) 14%, transparent);
+    margin-top:8px;
+  }
+
+  .cert-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px; margin-top:18px;}
+  .cert-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:22px 24px; box-shadow:var(--shadow);
+  }
+  .cert-card .icon{
+    width:36px; height:36px; border-radius:9px; background:var(--accent-soft); color:var(--accent);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-weight:800; font-size:15px; font-family:var(--display);
+  }
+  .cert-card h4{font-family:var(--display); font-size:15.5px; font-weight:700; margin-bottom:4px;}
+  .cert-card .hrs{font-family:var(--mono); font-size:12px; color:var(--text-faint); margin-bottom:12px; display:block;}
+  .cert-card ul{list-style:none; color:var(--text-dim); font-size:13.5px;}
+  .cert-card li{margin-bottom:4px; padding-left:14px; position:relative;}
+  .cert-card li::before{content:"—"; position:absolute; left:0; color:var(--text-faint);}
+
+  .skill-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .skill-group{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:22px; box-shadow:var(--shadow);}
+  .skill-group h4{font-family:var(--display); font-size:14px; font-weight:700; color:var(--teal); margin-bottom:14px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .tag{
+    font-size:13px; font-weight:500;
+    background:var(--bg-alt); border:1px solid var(--border);
+    padding:6px 12px; border-radius:20px; color:var(--text);
+  }
+
+  .timeline{position:relative; padding-left:28px;}
+  .timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:var(--border);}
+  .tl-item{position:relative; margin-bottom:30px;}
+  .tl-item:last-child{margin-bottom:0;}
+  .tl-item::before{
+    content:""; position:absolute; left:-28px; top:5px; width:12px; height:12px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent);
+  }
+  .tl-item h4{font-family:var(--display); font-size:16.5px; font-weight:700; margin-bottom:2px;}
+  .tl-item .role-org{font-size:13.5px; color:var(--text-faint); margin-bottom:10px; font-weight:600;}
+  .tl-item ul{list-style:none; color:var(--text-dim); font-size:14.5px;}
+  .tl-item li{margin-bottom:5px; padding-left:16px; position:relative;}
+  .tl-item li::before{content:"—"; position:absolute; left:0; color:var(--text-faint);}
+
+  .proj-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(270px,1fr)); gap:18px;}
+  .proj-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:24px; display:flex; flex-direction:column; gap:12px; box-shadow:var(--shadow);
+  }
+  .proj-card .badge{
+    align-self:flex-start; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    color:var(--accent); background:var(--accent-soft); padding:3px 10px; border-radius:20px;
+  }
+  .proj-card h4{font-family:var(--display); font-size:16.5px; font-weight:700;}
+  .proj-card p{color:var(--text-dim); font-size:14.5px; flex:1;}
+  .proj-card .stack{display:flex; flex-wrap:wrap; gap:6px;}
+  .proj-card .stack span{
+    font-family:var(--mono); font-size:11px; color:var(--text-faint);
+    border:1px solid var(--border); padding:3px 9px; border-radius:20px;
+  }
+  .proj-card .link{font-size:13.5px; font-weight:600; color:var(--teal); margin-top:2px;}
+
+  .other-list{display:grid; gap:10px;}
+  .other-item{
+    display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
+    background:var(--surface); border:1px solid var(--border); border-radius:12px;
+    padding:16px 20px; box-shadow:var(--shadow);
+  }
+  .other-item .name{font-weight:700; font-size:14.5px;}
+  .other-item .desc{color:var(--text-dim); font-size:13.5px; margin-left:8px;}
+
+  .placeholder-note{
+    font-family:var(--mono); font-size:11px; font-weight:600; color:#b5563f;
+    border:1px dashed #b5563f; border-radius:5px; padding:2px 8px; display:inline-block;
+  }
+
+  /* ---- contact / footer ---- */
+  footer{border-top:1px solid var(--border); padding:64px 0 40px; background:var(--bg-alt);}
+  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:16px; margin-top:26px;}
+  .contact-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:14px;
+    padding:22px; transition:border-color .15s, transform .15s; box-shadow:var(--shadow);
+  }
+  .contact-card:hover{border-color:var(--accent); transform:translateY(-2px);}
+  .contact-card .k{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
+  .contact-card .v{font-size:15.5px; font-weight:700; word-break:break-word;}
+  .foot-note{margin-top:48px; color:var(--text-faint); font-size:13px; text-align:center;}
+</style>
+</head>
+<body data-theme="light">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><span class="mark">SR</span> Sebastián Rain</div>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#educacion">Educación</a>
+        <a href="#competencias">Competencias</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuToggle" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#educacion">Educación</a>
+    <a href="#competencias">Competencias</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker"><span class="dot"></span> Disponible para prácticas y proyectos</div>
+        <h1 class="hero-name">Sebastián <span class="accent-text">Rain</span></h1>
+        <div class="hero-role">Técnico de Nivel Superior · Analista Programador — Ingeniería en Informática (INACAP)</div>
+        <p class="hero-desc">
+          Dos años de formación técnica y profesional en desarrollo de software, bases de datos y documentación funcional.
+          Capacidad analítica, orden metodológico y orientación al detalle, aplicando metodologías ágiles en proyectos académicos.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contacto">Contactarme</a>
+          <a class="btn" href="#educacion">Ver formación</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="avatar">SR</div>
+        <h3>Sebastián Rain Millapán</h3>
+        <div class="role-small">Analista Programador · Santiago, Chile</div>
+        <div class="stat-row"><span class="k">Estado</span><span class="v ok">Titulado — 2026</span></div>
+        <div class="stat-row"><span class="k">Cursando</span><span class="v">Ing. Informática · 6° sem.</span></div>
+        <div class="stat-row"><span class="k">Certificaciones</span><span class="v">4 emitidas</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN Y CERTIFICACIONES -->
+  <section id="educacion">
+    <div class="wrap">
+      <div class="eyebrow">Formación</div>
+      <h2 class="section-title">Educación y Certificaciones</h2>
+      <p class="section-lede">Respaldo académico y certificaciones oficiales que avalan mis competencias técnicas.</p>
+
+      <div class="edu-grid">
+        <div class="edu-item">
+          <div class="period">2026 — presente</div>
+          <div>
+            <h3>Ingeniería en Informática</h3>
+            <div class="org">Instituto Profesional INACAP</div>
+            <span class="status-chip">6° semestre en curso</span>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="period">Titulado<br>Mayo 2026</div>
+          <div>
+            <h3>Técnico de Nivel Superior — Analista Programador</h3>
+            <div class="org">Instituto Profesional INACAP</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="period">Ed. media</div>
+          <div>
+            <h3>Técnico Nivel Medio en Química Industrial</h3>
+            <div class="org">Liceo Centro Politécnico Particular San Ramón · Mención Laboratorio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="icon">01</div>
+          <h4>Infraestructura TI Segura</h4>
+          <span class="hrs">144 horas · INACAP</span>
+          <ul>
+            <li>Fundamentos de Seguridad de la Información — 72h</li>
+            <li>Sistemas Operativos — 72h</li>
+          </ul>
+        </div>
+        <div class="cert-card">
+          <div class="icon">02</div>
+          <h4>Desarrollo de Aplicaciones Iniciales</h4>
+          <span class="hrs">162 horas · INACAP</span>
+          <ul>
+            <li>Introducción a la Programación Segura — 90h</li>
+            <li>Programación Orientada a Objeto Seguro — 72h</li>
+          </ul>
+        </div>
+        <div class="cert-card">
+          <div class="icon">03</div>
+          <h4>Desarrollador Full Stack</h4>
+          <span class="hrs">144 horas · INACAP</span>
+          <ul>
+            <li>Programación Front End — 72h</li>
+            <li>Programación Back End — 72h</li>
+          </ul>
+        </div>
+        <div class="cert-card">
+          <div class="icon">04</div>
+          <h4>Certificado de Título</h4>
+          <span class="hrs">Emitido 24 jul. 2026 · INACAP</span>
+          <ul>
+            <li>Técnico de Nivel Superior Analista Programador</li>
+            <li>N° Registro 151.665</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETENCIAS CORE -->
+  <section id="competencias" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="wrap">
+      <div class="eyebrow">Stack</div>
+      <h2 class="section-title">Competencias Core</h2>
+      <p class="section-lede">El equilibrio entre código robusto y habilidades operativas forjadas en el mundo real.</p>
+
+      <div class="skill-groups">
+        <div class="skill-group">
+          <h4>Desarrollo de software</h4>
+          <div class="tag-row">
+            <span class="tag">POO</span><span class="tag">Front-End</span><span class="tag">Back-End</span>
+            <span class="tag">Ingeniería de software</span><span class="tag">Apps móviles</span><span class="tag">Programación segura</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Bases de datos</h4>
+          <div class="tag-row">
+            <span class="tag">SQL</span><span class="tag">Oracle</span><span class="tag">Modelamiento relacional</span><span class="tag">NoSQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Infraestructura y redes</h4>
+          <div class="tag-row">
+            <span class="tag">Redes de datos</span><span class="tag">Sistemas operativos</span>
+            <span class="tag">On-Premise</span><span class="tag">Cloud</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Documentación y procesos</h4>
+          <div class="tag-row">
+            <span class="tag">BPMN</span><span class="tag">Diagramas de flujo</span><span class="tag">Cadena de valor</span>
+            <span class="tag">Historias de usuario</span><span class="tag">SOAP</span><span class="tag">API REST</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Herramientas y metodologías</h4>
+          <div class="tag-row">
+            <span class="tag">JIRA</span><span class="tag">Azure DevOps</span><span class="tag">Draw.io</span>
+            <span class="tag">Bizagi</span><span class="tag">Scrum</span><span class="tag">Seguridad de la información</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="eyebrow">Trayectoria</div>
+      <h2 class="section-title">Experiencia Profesional</h2>
+      <p class="section-lede">Construcción de procesos, control de calidad y logística — la base operativa detrás del enfoque técnico.</p>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Operario de Producción</h4>
+          <div class="role-org">Fibrosonoco</div>
+          <ul>
+            <li>Operación de maquinaria industrial y control de procesos productivos</li>
+            <li>Organización y cumplimiento de estándares de calidad</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <h4>Analista Químico</h4>
+          <div class="role-org">AGROLAB</div>
+          <ul>
+            <li>Análisis de muestras químicas y registro técnico de resultados</li>
+            <li>Trabajo bajo protocolos y procedimientos estandarizados</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <h4>Encargado de Despacho</h4>
+          <div class="role-org">REGEMAC</div>
+          <ul>
+            <li>Coordinación y planificación de rutas de despacho</li>
+            <li>Organización y seguimiento de procesos logísticos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos" style="background:var(--bg-alt); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="wrap">
+      <div class="eyebrow">Portafolio</div>
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <p class="section-lede">Sistemas web completos — gestión de roles, APIs REST y dashboards de análisis — construidos de extremo a extremo, del modelo de datos a la interfaz.</p>
+
+      <div class="proj-grid">
+        <div class="proj-card">
+          <span class="badge">DJANGO</span>
+          <h4>TicaShop Latam — Sistema de Tickets de Soporte</h4>
+          <p>Plataforma web de gestión de tickets con control de roles, asignación de casos, papelera con recuperación (soft-delete) y registro de auditoría por cada acción.</p>
+          <div class="stack"><span>Python</span><span>Django</span><span>MySQL</span><span>Bootstrap4</span></div>
+          <a class="link" href="https://github.com/akaStian/TiCaShopLatamV4">→ ver repositorio</a>
+        </div>
+        <div class="proj-card">
+          <span class="badge">REACT</span>
+          <h4>Ferretería Teresa — Sitio Web + Gestión de Productos</h4>
+          <p>Sitio institucional con módulo de gestión de productos (alta, edición y eliminación), formulario de contacto con validaciones y cálculo automático de edad.</p>
+          <div class="stack"><span>React</span><span>JavaScript</span><span>CSS</span></div>
+          <a class="link" href="https://github.com/akaStian/FerreteriaTeresa_Ev3">→ ver repositorio</a>
+        </div>
+      </div>
+
+      <div style="height:40px;"></div>
+
+      <div class="eyebrow">Además</div>
+      <h3 style="font-family:var(--display); font-weight:700; font-size:19px; margin-bottom:16px;">Otras Exploraciones</h3>
+      <div class="other-list">
+        <div class="other-item">
+          <span><span class="name">Simulador de Escalabilidad (Streamlit)</span><span class="desc">— modelo logístico, derivadas y detección de caídas de servicio con dashboard interactivo</span></span>
+          <a href="https://github.com/akaStian/Simulador-de-Escalabilidad-Streamlit-" style="color:var(--teal); font-weight:600; font-size:13.5px;">repo →</a>
+        </div>
+        <div class="other-item">
+          <span><span class="name">Catálogo de Productos — API REST</span><span class="desc">— Django + DRF con autenticación JWT, CRUD web y endpoints de categorías/productos</span></span>
+          <a href="https://github.com/akaStian/Cat-logo-de-Productos-API-REST" style="color:var(--teal); font-weight:600; font-size:13.5px;">repo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <footer id="contacto">
+    <div class="wrap">
+      <div class="eyebrow">Contacto</div>
+      <h2 class="section-title">Hablemos</h2>
+      <p class="section-lede">Abierto a prácticas, proyectos y oportunidades relacionadas a desarrollo e infraestructura TI.</p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:sebastian182002millapan@gmail.com">
+          <div class="k">Email</div>
+          <div class="v">sebastian182002millapan@gmail.com</div>
+        </a>
+        <a class="contact-card" href="tel:+56942151176">
+          <div class="k">Teléfono</div>
+          <div class="v">+56 9 4215 1176</div>
+        </a>
+        <a class="contact-card" href="https://www.linkedin.com/in/stianrain/" target="_blank" rel="noopener">
+          <div class="k">LinkedIn</div>
+          <div class="v">linkedin.com/in/stianrain</div>
+        </a>
+        <a class="contact-card" href="https://github.com/akaStian" target="_blank" rel="noopener">
+          <div class="k">GitHub</div>
+          <div class="v">github.com/akaStian</div>
+        </a>
+      </div>
+
+      <div class="foot-note">© 2026 Sebastián Rain Millapán — sitio construido con HTML/CSS puro para GitHub Pages</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  (function(){
+    var root = document.body;
+    var toggle = document.getElementById('themeToggle');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+
+    toggle.addEventListener('click', function(){
+      var current = root.getAttribute('data-theme');
+      root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    });
+
+    var menuBtn = document.getElementById('menuToggle');
+    var mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', function(){
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
+    });
+  })();
+</script>
+
+</body>
+</html>
