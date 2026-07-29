@@ -8,7 +8,7 @@ bases de datos y la parte de infraestructura/seguridad TI.
 - 🌱 Terminando mi Ingeniería en Informática (INACAP)
 - 💼 Abierto a oportunidades laborales como Analista Programador / Desarrollador
 - 📫 Contacto: sebastian182002millapan@gmail.com
-- 🌐 Portafolio: [stianrain.github.io](https://stianrain.github.io)
+- 🌐 Portafolio: [stianrain.github.io/stianrain/](https://stianrain.github.io/stianrain/)
 - 💼 LinkedIn: [linkedin.com/in/stianrain](https://www.linkedin.com/in/stianrain/)
 
 ### Stack
