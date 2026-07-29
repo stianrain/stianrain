@@ -1,16 +1,26 @@
-## Hi there 👋
+## Hola, soy Sebastián 👋
 
-<!--
-**stianrain/stianrain** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Técnico de Nivel Superior Analista Programador (INACAP), actualmente cursando el
+6° semestre de Ingeniería en Informática. Me interesa el desarrollo full-stack,
+bases de datos y la parte de infraestructura/seguridad TI.
 
-Here are some ideas to get you started:
+- 🔭 Actualmente construyendo proyectos con **Django**, **React** y **APIs REST**
+- 🌱 Terminando mi Ingeniería en Informática (INACAP)
+- 💼 Abierto a oportunidades laborales como Analista Programador / Desarrollador
+- 📫 Contacto: sebastian182002millapan@gmail.com
+- 🌐 Portafolio: [stianrain.github.io](https://stianrain.github.io)
+- 💼 LinkedIn: [linkedin.com/in/stianrain](https://www.linkedin.com/in/stianrain/)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Stack
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/-Django-092E20?style=flat&logo=django&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat&logo=git&logoColor=white)
+
+### Algunos proyectos
+- 🎫 [TicaShop Latam](https://github.com/akaStian/TiCaShopLatamV4) — sistema de tickets de soporte con roles y auditoría (Django)
+- 🛠️ [Ferretería Teresa](https://github.com/akaStian/FerreteriaTeresa_Ev3) — sitio + gestión de productos (React)
+- 📊 [Simulador de Escalabilidad](https://github.com/akaStian/Simulador-de-Escalabilidad-Streamlit-) — modelo logístico y alertas (Streamlit)
+- 🔌 [Catálogo de Productos — API REST](https://github.com/akaStian/Cat-logo-de-Productos-API-REST) — Django + DRF con JWT
