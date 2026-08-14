@@ -281,6 +281,14 @@
   .contact-card:hover{border-color:var(--accent); transform:translateY(-2px);}
   .contact-card .k{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
   .contact-card .v{font-size:15.5px; font-weight:700; word-break:break-word;}
+
+  .contact-card .v {
+  /* Permite que las palabras largas se rompan y pasen a la siguiente línea */
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal; 
+}
+  
   .foot-note{margin-top:48px; color:var(--text-faint); font-size:13px; text-align:center;}
 </style>
 </head>
@@ -585,7 +593,7 @@
     <div class="wrap">
       <div class="eyebrow">Contacto</div>
       <h2 class="section-title">Hablemos</h2>
-      <p class="section-lede">Abierto a prácticas, proyectos y oportunidades relacionadas a desarrollo e infraestructura TI.</p>
+      <p class="section-lede">Técnico TI en camino a la ingeniería. Actualmente abierto a proyectos, colaboraciones y oportunidades en desarrollo e infraestructura para seguir sumando experiencia al mundo real.</p>
 
       <div class="contact-grid">
         <a class="contact-card" href="mailto:sebastian182002millapan@gmail.com">
