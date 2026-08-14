@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sebastián Rain — Analista Programador</title>
-<meta name="description" content="Sebastián Ignacio Rain Millapán — Técnico de Nivel Superior Analista Programador, estudiante de Ingeniería en Informática en INACAP.">
+<meta name="description" content="Sebastián Ignacio Rain Millapán — Técnico de Nivel Superior Analista Programador, estud.contact-card .v {
+  /* Permite que las palabras largas se rompan y pasen a la siguiente línea */
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal; 
+}iante de Ingeniería en Informática en INACAP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -272,22 +277,52 @@
   }
 
   /* ---- contact / footer ---- */
-  footer{border-top:1px solid var(--border); padding:64px 0 40px; background:var(--bg-alt);}
-  .contact-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:16px; margin-top:26px;}
-  .contact-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:14px;
-    padding:22px; transition:border-color .15s, transform .15s; box-shadow:var(--shadow);
+/* ---- contact / footer ---- */
+  footer {
+    border-top: 1px solid var(--border); 
+    padding: 64px 0 40px; 
+    background: var(--bg-alt);
   }
-  .contact-card:hover{border-color:var(--accent); transform:translateY(-2px);}
-  .contact-card .k{font-family:var(--mono); font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:10px;}
-  .contact-card .v{font-size:15.5px; font-weight:700; word-break:break-word;}
-
+  
+  .contact-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); 
+    gap: 16px; 
+    margin-top: 26px;
+  }
+  
+  .contact-card {
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: 14px;
+    padding: 22px; 
+    transition: border-color .15s, transform .15s; 
+    box-shadow: var(--shadow);
+  }
+  
+  .contact-card:hover {
+    border-color: var(--accent); 
+    transform: translateY(-2px);
+  }
+  
+  .contact-card .k {
+    font-family: var(--mono); 
+    font-size: 11px; 
+    color: var(--text-faint); 
+    text-transform: uppercase; 
+    letter-spacing: 0.06em; 
+    margin-bottom: 10px;
+  }
+  
+  /* --- Aquí está la clase .v unificada --- */
   .contact-card .v {
-  /* Permite que las palabras largas se rompan y pasen a la siguiente línea */
-  word-break: break-all;
-  overflow-wrap: break-word;
-  white-space: normal; 
-}
+    font-size: 15.5px; 
+    font-weight: 700; 
+    /* Permite que el correo salte a la siguiente línea */
+    word-break: break-all;
+    overflow-wrap: break-word;
+    white-space: normal; 
+  }
   
   .foot-note{margin-top:48px; color:var(--text-faint); font-size:13px; text-align:center;}
 </style>
