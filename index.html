@@ -7,39 +7,39 @@
     <meta name="description" content="Sebastián Ignacio Rain Millapán — Técnico de Nivel Superior Analista Programador, estudiante de Ingeniería en Informática en INACAP.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ==========================================================================
            VARIABLES & THEMES
            ========================================================================== */
         :root {
             /* Light Theme */
-            --bg: #fdfdfc;
-            --bg-alt: #f4f4f5;
+            --bg: #f6f8fb;
+            --bg-alt: #eef2f8;
             --surface: #ffffff;
-            --border: #e4e4e7;
-            --text: #18181b;
-            --text-dim: #52525b;
-            --text-faint: #a1a1aa;
+            --border: #dde4ef;
+            --text: #0e1a2b;
+            --text-dim: #4b5b74;
+            --text-faint: #93a2b8;
             
             /* Accents */
-            --accent: #d97706; /* Amber/Bronze */
-            --accent-hover: #b45309;
+            --accent: #2563eb; /* Azul profesional */
+            --accent-hover: #1d4ed8;
             --accent-ink: #ffffff;
-            --accent-soft: #fef3c7;
-            --teal: #0f766e;
-            --teal-soft: #ccfbf1;
+            --accent-soft: #dbeafe;
+            --teal: #0891b2; /* Cian — estado / seguridad */
+            --teal-soft: #cffafe;
             
             /* Effects */
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-sm: 0 1px 2px 0 rgb(15 30 60 / 0.06);
+            --shadow-md: 0 4px 6px -1px rgb(15 30 60 / 0.1), 0 2px 4px -2px rgb(15 30 60 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(15 30 60 / 0.12), 0 4px 6px -4px rgb(15 30 60 / 0.1);
+            --shadow-hover: 0 20px 25px -5px rgb(15 30 60 / 0.14), 0 8px 10px -6px rgb(15 30 60 / 0.1);
             
             /* Typography */
             --sans: 'Inter', system-ui, -apple-system, sans-serif;
-            --display: 'Manrope', var(--sans);
-            --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+            --display: 'Sora', var(--sans);
+            --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
             
             /* Layout */
             --max-w: 1040px;
@@ -47,28 +47,28 @@
         }
 
         [data-theme="dark"] {
-            /* Dark Theme */
-            --bg: #09090b;
-            --bg-alt: #18181b;
-            --surface: #111113;
-            --border: #27272a;
-            --text: #f4f4f5;
-            --text-dim: #a1a1aa;
-            --text-faint: #71717a;
+            /* Dark Theme — navy profundo, acentos azul/cian */
+            --bg: #060b16;
+            --bg-alt: #0a1120;
+            --surface: #0d1526;
+            --border: #1c2a42;
+            --text: #eef2f8;
+            --text-dim: #94a7c4;
+            --text-faint: #56698c;
             
             /* Accents */
-            --accent: #fbbf24;
-            --accent-hover: #fcd34d;
-            --accent-ink: #18181b;
-            --accent-soft: #453303;
-            --teal: #2dd4bf;
-            --teal-soft: #115e59;
+            --accent: #4f8dfd;
+            --accent-hover: #7aabff;
+            --accent-ink: #071022;
+            --accent-soft: #14233f;
+            --teal: #22d3ee;
+            --teal-soft: #0b2b38;
             
             /* Effects */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
-            --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.6);
+            --shadow-lg: 0 10px 25px -5px rgb(0 0 0 / 0.55);
+            --shadow-hover: 0 20px 35px -8px rgb(0 0 0 / 0.6), 0 0 40px -12px color-mix(in srgb, var(--accent) 35%, transparent);
         }
 
         /* ==========================================================================
@@ -110,14 +110,13 @@
 
         .eyebrow {
             font-family: var(--mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--teal);
             margin-bottom: 12px;
             display: inline-block;
         }
+        .eyebrow::before { content: '// '; color: var(--text-faint); }
 
         .section-title {
             font-family: var(--display);
@@ -271,8 +270,21 @@
            HERO SECTION
            ========================================================================== */
         .hero { padding: 80px 0 100px; }
+
+        .hero::before {
+            content: '';
+            position: absolute; inset: 0; z-index: 0;
+            background-image:
+                linear-gradient(color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px),
+                linear-gradient(90deg, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 0%, black, transparent 75%);
+            mask-image: radial-gradient(ellipse 60% 55% at 50% 0%, black, transparent 75%);
+            pointer-events: none;
+        }
         
         .hero-grid {
+            position: relative; z-index: 1;
             display: grid;
             grid-template-columns: 1.3fr 0.7fr;
             gap: 60px;
@@ -335,7 +347,7 @@
 
         .btn {
             font-family: var(--sans); font-size: 0.95rem; font-weight: 600;
-            padding: 14px 28px; border-radius: 12px; border: 1px solid var(--border);
+            padding: 14px 30px; border-radius: 999px; border: 1px solid var(--border);
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
             transition: all 0.2s;
             background: var(--surface);
@@ -379,8 +391,21 @@
         }
 
         .hero-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
             background: linear-gradient(90deg, var(--accent), var(--teal));
+        }
+
+        .term-bar {
+            display: flex; align-items: center; gap: 7px;
+            margin: -4px 0 24px -4px;
+        }
+        .term-dot {
+            width: 9px; height: 9px; border-radius: 50%;
+            background: var(--border);
+        }
+        .term-path {
+            font-family: var(--mono); font-size: 0.75rem; color: var(--text-faint);
+            margin-left: 8px;
         }
 
         .avatar {
@@ -470,7 +495,8 @@
             width: 44px; height: 44px; border-radius: 12px;
             background: var(--accent-soft); color: var(--accent);
             display: flex; align-items: center; justify-content: center;
-            margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; font-family: var(--display);
+            margin-bottom: 20px; font-weight: 700; font-size: 0.72rem; font-family: var(--mono);
+            letter-spacing: 0.02em;
         }
         .cert-card h4 { font-family: var(--display); font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; line-height: 1.3;}
         .cert-card .hrs { font-family: var(--mono); font-size: 0.8rem; color: var(--text-faint); margin-bottom: 16px; display: block; font-weight: 600;}
@@ -624,7 +650,7 @@
         }
     </style>
 </head>
-<body data-theme="light">
+<body data-theme="dark">
 
 <header class="nav">
     <div class="nav-inner">
@@ -660,7 +686,7 @@
     <section class="hero">
         <div class="wrap hero-grid">
             <div class="reveal">
-                <div class="kicker"><span class="dot"></span> Buscando oportunidades TI</div>
+                <div class="kicker"><span class="dot"></span> disponible para nuevas oportunidades</div>
                 <h1 class="hero-name">Sebastián <span class="accent-text">Rain</span></h1>
                 <div class="hero-role">Analista Programador — Est. Ingeniería Informática (INACAP)</div>
                 <p class="hero-desc">
@@ -673,6 +699,10 @@
             </div>
 
             <div class="hero-card reveal" style="transition-delay: 0.1s;">
+                <div class="term-bar">
+                    <span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span>
+                    <span class="term-path">~/sebastian-rain</span>
+                </div>
                 <div class="avatar">SR</div>
                 <h3>Sebastián Rain Millapán</h3>
                 <div class="role-small">Analista Programador · Santiago, Chile</div>
@@ -687,7 +717,7 @@
     <section id="educacion" class="section-bg">
         <div class="wrap">
             <div class="reveal">
-                <div class="eyebrow">Formación</div>
+                <div class="eyebrow">formación</div>
                 <h2 class="section-title">Educación y Certificaciones</h2>
                 <p class="section-lede">Respaldo académico y certificaciones oficiales que avalan mis competencias técnicas en TI y Ciberseguridad.</p>
             </div>
@@ -719,7 +749,7 @@
 
             <div class="cert-grid reveal">
                 <div class="cert-card">
-                    <div class="icon">01</div>
+                    <div class="icon">SEG</div>
                     <h4>Infraestructura TI Segura</h4>
                     <span class="hrs">144 horas · INACAP</span>
                     <ul>
@@ -728,7 +758,7 @@
                     </ul>
                 </div>
                 <div class="cert-card">
-                    <div class="icon">02</div>
+                    <div class="icon">DEV</div>
                     <h4>Desarrollo de Aplicaciones Iniciales</h4>
                     <span class="hrs">162 horas · INACAP</span>
                     <ul>
@@ -737,7 +767,7 @@
                     </ul>
                 </div>
                 <div class="cert-card">
-                    <div class="icon">03</div>
+                    <div class="icon">FS</div>
                     <h4>Desarrollador Full Stack</h4>
                     <span class="hrs">144 horas · INACAP</span>
                     <ul>
@@ -746,7 +776,7 @@
                     </ul>
                 </div>
                 <div class="cert-card">
-                    <div class="icon">04</div>
+                    <div class="icon">TIT</div>
                     <h4>Certificado de Título</h4>
                     <span class="hrs">Julio 2026 · INACAP</span>
                     <ul>
@@ -780,7 +810,7 @@
     <section id="competencias">
         <div class="wrap">
             <div class="reveal">
-                <div class="eyebrow">Stack</div>
+                <div class="eyebrow">stack</div>
                 <h2 class="section-title">Competencias Técnicas</h2>
                 <p class="section-lede">Conocimientos y herramientas aplicadas en proyectos de desarrollo de software, bases de datos y arquitectura.</p>
             </div>
@@ -851,7 +881,7 @@
     <section id="experiencia" class="section-bg">
         <div class="wrap">
             <div class="reveal">
-                <div class="eyebrow">Trayectoria</div>
+                <div class="eyebrow">trayectoria</div>
                 <h2 class="section-title">Experiencia Profesional</h2>
                 <p class="section-lede">Construcción de procesos, control de calidad y logística — la base operativa detrás de mi enfoque técnico y resolutivo.</p>
             </div>
@@ -881,7 +911,7 @@
     <section id="proyectos">
         <div class="wrap">
             <div class="reveal">
-                <div class="eyebrow">Portafolio</div>
+                <div class="eyebrow">portafolio</div>
                 <h2 class="section-title">Proyectos Destacados</h2>
                 <p class="section-lede">Sistemas web y APIs construidos de extremo a extremo, abarcando desde el modelamiento de datos hasta el despliegue de interfaces.</p>
             </div>
@@ -906,7 +936,7 @@
             <div style="height: 60px;"></div>
 
             <div class="reveal">
-                <div class="eyebrow">Además</div>
+                <div class="eyebrow">además</div>
                 <h3 style="font-family:var(--display); font-weight:800; font-size:1.5rem; margin-bottom:20px;">Otras Exploraciones</h3>
                 
                 <div class="other-list">
@@ -933,7 +963,7 @@
     <footer id="contacto">
         <div class="wrap">
             <div class="reveal">
-                <div class="eyebrow">Contacto</div>
+                <div class="eyebrow">contacto</div>
                 <h2 class="section-title">Hablemos</h2>
                 <p class="section-lede">Técnico TI en camino a la ingeniería. Abierto a proyectos, colaboraciones y oportunidades en desarrollo de software e infraestructura.</p>
             </div>
